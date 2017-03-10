@@ -33,6 +33,7 @@ import org.springframework.cloud.netflix.feign.AnnotatedParameterProcessor;
 import org.springframework.cloud.netflix.feign.annotation.PathVariableParameterProcessor;
 import org.springframework.cloud.netflix.feign.annotation.RequestHeaderParameterProcessor;
 import org.springframework.cloud.netflix.feign.annotation.RequestParamParameterProcessor;
+import org.springframework.cloud.netflix.feign.annotation.RequestPartParameterProcessor;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.ResourceLoaderAware;
 import org.springframework.core.DefaultParameterNameDiscoverer;
@@ -304,6 +305,7 @@ public class SpringMvcContract extends Contract.BaseContract
 		annotatedArgumentResolvers.add(new PathVariableParameterProcessor());
 		annotatedArgumentResolvers.add(new RequestParamParameterProcessor());
 		annotatedArgumentResolvers.add(new RequestHeaderParameterProcessor());
+		annotatedArgumentResolvers.add(new RequestPartParameterProcessor());
 
 		return annotatedArgumentResolvers;
 	}
